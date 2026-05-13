@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bauyrzhan & Almira | Wedding Invitation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div id="rose-container"></div>
+
+<div id="envelope-wrapper">
+    <div class="vintage-frame"></div>
+    <div class="decor-element ornament-1"></div>
+    <div class="decor-element ornament-2"></div>
+    <div class="static-heart heart-top"></div>
+    <div class="static-heart heart-bottom"></div>
+
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="letter">
+            <div class="letter-text">
+                <h3>B & A</h3>
+                <p>24.07.2026</p>
+            </div>
+        </div>
+        <div class="wax-seal">
+            <i class="fa-solid fa-stamp"></i>
+        </div>
+    </div>
+    <p class="click-hint">Ашу үшін басыңыз</p>
+</div>
+<div id="full-invitation" style="display: none;">
+
+    <div class="hero-section reveal">
+        <img src="images/1.png" alt="Wedding" class="hero-img">
+
+        <div class="hero-overlay-top">
+            <h1 class="names">Bauyrzhan & Almira</h1>
+            <p class="invite-text-on-img">Үйлену тойына шақырамыз!</p>
+        </div>
+
+        <div class="music-on-photo">
+            <audio id="wedding-audio" loop><source src="music/wedding.mp3" type="audio/mpeg"></audio>
+            <button id="music-toggle" onclick="toggleMusic()">
+                <i class="fa-solid fa-circle-play" id="music-icon"></i>
+            </button>
+        </div>
+
+        <div class="scroll-hint">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div id="collage-section">
+    </div>
+
+        <div class="section calendar-section reveal">
+            <h3>Шілде 2026</h3>
+            <div class="calendar-grid">
+                <div>Дүй</div><div>Сей</div><div>Сәр</div><div>Бей</div><div>Жұм</div><div>Сен</div><div>Жек</div>
+                <span></span><span></span>
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+                <span>20</span><span>21</span><span>22</span><span>23</span>
+                <span class="wedding-day">24 <i class="fa-solid fa-heart beating-heart"></i></span>
+                <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+            </div>
+        </div>
+        <div class="section countdown-section reveal">
+            <h3 class="countdown-title">Тойға дейін қалды:</h3>
+            <div id="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <p>Күн</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <p>Сағат</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <p>Минут</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <p>Секунд</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section details-section reveal">
+            <p><i class="fa-regular fa-clock"></i> Сағат: 18:00</p>
+            <p><i class="fa-solid fa-location-dot"></i> Бесағаш, Аэропортная 29г</p>
+            <a href="https://maps.google.com" target="_blank" class="map-btn">Картаны ашу</a>
+        </div>
+
+        <div class="section gallery-section reveal">
+            <div class="slider" id="main-slider">
+                <img id="slider-img" src="images/photo1.png" alt="Gallery">
+            </div>
+            <p class="swipe-hint">← Свайп жасаңыз →</p>
+        </div>
+
+    <div class="section final-combined-section reveal">
+        <div class="overlay-content">
+
+            <h2 class="final-quote">Қуанышымызға ортақ болыңыздар!</h2>
+
+            <div class="rsvp-card">
+                <h3 class="rsvp-title">Тойға келесіз бе?</h3>
+                <form id="telegram-form">
+                    <input type="text" id="guest-name" placeholder="Атыңыз" required>
+                    <input type="number" id="guest-count" placeholder="Адам саны" required>
+                    <button type="submit" class="submit-btn">Мен келемін!</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
