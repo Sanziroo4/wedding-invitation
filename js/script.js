@@ -187,3 +187,38 @@ document.getElementById('telegram-form').onsubmit = function(e) {
         this.reset();
     });
 };
+document.getElementById('telegram-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // БОТ ДЕРЕКТЕРІ
+    const token = '8871109310:AAEXk2YNs2m5-aNDDLOq_4skF7maEKrygQE';
+    // ЕКІ ID: БАУЫРЖАН ЖӘНЕ САНЖАР
+    const chatIds = ['1070666562', '995001238'];
+
+    // МӘЛІМЕТТЕРДІ ЖИНАУ
+    const name = document.getElementById('guest-name').value;
+    const count = document.getElementById('guest-count').value;
+
+    // ХАБАРЛАМА МӘТІНІ
+    const message = `🤵👰 *Жаңа RSVP хабарламасы!*\n\n` +
+        `👤 *Есімі:* ${name}\n` +
+        `👥 *Адам саны:* ${count}\n\n` +
+        `✨ Қонағыңызды күтіңіз!`;
+
+    // ӘРБІР ID-ГЕ ЖЕКЕ-ЖЕКЕ ЖІБЕРУ
+    chatIds.forEach(id => {
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    console.error('Қате: ' + id + ' үшін хабарлама жіберілмеді.');
+                }
+            })
+            .catch(error => console.error('Байланыс қатесі:', error));
+    });
+
+    // ҚОЛДАНУШЫҒА ЖАУАП
+    alert('Рақмет! Хабарламаңыз сәтті жіберілді.');
+    document.getElementById('telegram-form').reset();
+});
