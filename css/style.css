@@ -166,7 +166,7 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 }
 
 .names {
-    font-family: ''Kalissa'', cursive;
+    font-family: 'Alice', serif !important;
     font-size: 45px;
     color: #a67c52; /* Сенің шрифтің мен түсің */
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Мәтін жақсы оқылуы үшін */
@@ -174,7 +174,7 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 }
 
 .invite-text-on-img {
-    font-family: 'Marck Script', cursive;
+    font-family: 'Alice', serif !important;
     font-size: 14px;
     color: #a67c52;
     letter-spacing: 1px;
@@ -182,7 +182,7 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 }
 /* "Үйлену тойына шақырамыз!" жазуының стилі */
 .invite-text, .invite-text-on-img {
-    font-family: 'Marck Script', cursive !important; /* Есімдердегідей шрифт */
+    font-family: 'Alice', serif !important; /* Есімдердегідей шрифт */
     font-size: 28px !important; /* Өлшемін сәл кішірек қылдық */
     color: #a67c52 !important; /* Есімдердегідей алтын-қоңыр түс */
     text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8) !important;
@@ -192,20 +192,62 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 
 /* Егер есімдердің де түсін нақтылағың келсе */
 .names {
-    font-family: 'Marck Script', cursive
+    font-family: 'Alice', serif !important;
     color:#a67c52;
     font-size: 45px;
     margin-bottom: 5px;
 }
-
-/* Музыка батырмасының суреттегі орны */
-.music-on-photo {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    z-index: 10;
+/* 1. Басты контейнер (Сурет тұрған жер) */
+.hero-section {
+    position: relative; /* Бұл өте маңызды, батырма осыған байланып тұрады */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* 2. Батырманың контейнері (Позициялау) */
+.music-on-photo {
+    position: absolute;
+    bottom: 25px; /* Төменнен қашықтық */
+    left: 20px;   /* Сол жақтан қашықтық */
+    z-index: 100; /* Батырма суреттің астында қалып қоймауы үшін */
+}
+
+/* 3. Батырманың өзі (Сыртқы пішіні) */
+#music-toggle {
+    /* rgba(255, 255, 255, 0.3) - мөлдірлік деңгейін 0.3-ке қойдық (30%) */
+    background: rgba(255, 255, 255, 0.3) !important;
+
+    /* Артындағы суретті әдемі бұлдырату (Glassmorphism эффектісі) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Жіңішке мөлдір жиек әйнек екенін айқындап тұрады */
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+/* 4. Ішіндегі иконка (Түсі) */
+#music-icon {
+    color: #a67c52 !important; /* Сенің қоңыр түсің */
+    font-size: 28px;
+    line-height: 1;
+}
+
+/* Басқанда немесе тышқанды апарғанда сәл анық көрінуі үшін */
+#music-toggle:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+    transform: scale(1.1);
+}
 /* Төменге жылжыту анимациясы */
 .scroll-hint {
     position: absolute;
@@ -263,24 +305,33 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
     backdrop-filter: blur(8px);
 }
 /* Барлық тақырыптарға (h1-ден h3-ке дейін) бірдей стиль беру */
-h1, h2, h3, .section-title {
-    /* 1. Шрифт: "Той салтанаты" сияқты әдемі курсив */
-    font-family: 'Great Vibes', cursive;
-
-    /* 2. Түс: Суреттегідей қанық қара/қою түс */
-    color: #000000;
-
-    /* 3. Баптаулар */
-    font-weight: normal; /* Курсив шрифттерге тым жуан болған жараспайды */
+/* 1. Тақырыптар мен есімдер (Алтын түс) */
+h1, h2, .section-title, .couple-names {
+    font-family: 'Alice', serif !important;
+    color: #a67c52 !important; /* Алтын-қоңыр түс */
+    font-weight: normal;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 50px; /* Тақырыптар үлкен болуы керек */
 }
 
+/* 2. Астындағы негізгі мәтін (Қара түс және кішірек) */
+.invite-text{
+    font-family: 'Montserrat', sans-serif !important; /* Оқуға оңай шрифт */
+    color: #2c2c2c !important; /* Қанық қою сұр/қара түс */
+    font-size: 17px !important; /* Мәтінді осы жерден кішірейтесің */
+    line-height: 1.6; /* Жолдардың арасы ашық, оқуға ыңғайлы */
+    text-align: center;
+    font-weight: normal;
+    max-width: 85%; /* Мәтін жиектерге тіреліп қалмауы үшін */
+    margin: 0 auto 25px auto; /* Ортаға қою және астынан орын тастау */
+    text-transform: none; /* Барлық әріптер бас әріп болып кетпеуі үшін */
+}
 /* Егер кейбір тақырыптар тым кішкентай көрінсе, мөлшерін былай ретте: */
 h1 { font-size: 55px; } /* Ең басты тақырып */
 h2 { font-size: 40px; } /* Бөлімдердің тақырыбы (Күнтізбе, Карта т.б.) */
 /* --- 2. НЕГІЗГІ ДИЗАЙН --- */
-.names { font-family: 'Great Vibes', cursive; font-size: 50px; color: #a67c52; }
+.names { font-family: 'Alice', serif !important; font-size: 50px; color: #a67c52; }
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -291,11 +342,17 @@ h2 { font-size: 40px; } /* Бөлімдердің тақырыбы (Күнтіз
     background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 .wedding-day { background: #a67c52; color: white; border-radius: 50%; font-weight: bold; position: relative; }
-.beating-heart { position: absolute; top: -10px; right: -5px; color: var(--burgundy); animation: beat 1.2s infinite; }
+.beating-heart {
+    position: absolute;
+    top: -12px;   /* Сәл жоғарырақ */
+    right: -10px;  /* Сәл оңғарырақ */
+    color: #8b0000; /* var(--burgundy) істемесе, тікелей түсті жаз */
+    animation: beat 1.2s infinite;
+    z-index: 99;  /* Басқа элементтердің үстінде тұруы үшін */
+    display: block !important;
+}
 @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
 
-.music-on-photo { position: absolute; bottom: 15px; left: 15px; }
-#music-toggle { background: rgba(255,255,255,0.7); backdrop-filter: blur(5px); border: none; width: 45px; height: 45px; border-radius: 50%; color: #a67c52; font-size: 24px; cursor: pointer; }
 
 .slider img { width: 100%; height: 450px; object-fit: contain; background: #f0f0f0; border-radius: 15px; transition: opacity 0.4s; }
 .map-btn, .submit-btn { background: #a67c52; color: white; text-decoration: none; padding: 15px 30px; border-radius: 10px; display: inline-block; width: 80%; border: none; cursor: pointer; }
@@ -303,7 +360,7 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
 
 /* "Той салтанаты" тақырыбы үшін */
 .wedding-title {
-    font-family: 'Great Vibes', cursive; /* Немесе 'Playfair Display' */
+    font-family: 'Alice', serif !important; /* Немесе 'Playfair Display' */
     color: #a67c52; /* Алтын түс */
     font-size: 50px;
     text-align: center;
@@ -313,7 +370,7 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
 
 /* Астындағы мәліметтер (күн, уақыт, мекен-жай) үшін */
 .wedding-details {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Alice', serif !important;
     color: #4A4A4A; /* Көз шаршатпайтын қою сұр */
     font-size: 18px;
     line-height: 1.6; /* Жолдардың арасы ашық болуы үшін */
@@ -426,44 +483,122 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
     align-items: center;
     text-align: center;
 }
-
-/* Жоғарғы жазу стилі */
-.final-quote {
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-    color: #ffffff;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9);
-    margin-top: 20px;
+/* 1. RSVP Тақырыбы (Қоңыр түс) */
+.rsvp-title {
+    font-family: 'Alice', serif !important;
+    font-size: 18px;
+    color: #a67c52 !important; /* Сенің негізгі алтын-қоңыр түсің */
+    line-height: 1.4;
+    margin-bottom: 25px;
+    font-weight: normal;
 }
 
+/* 2. Input ішіндегі жазулардың (placeholder) түсі */
+/* Бұл "Атыңыз" деген жазуды ақшыл қоңыр қылады */
+input::placeholder {
+    color: rgba(166, 124, 82, 0.6) !important; /* Мөлдірлеу қоңыр */
+    font-family: 'Alice', serif;
+}
 
-/* 1. RSVP КАРТАСЫН МӨЛДІР (ӘЙНЕК СИЯҚТЫ) ЕТУ */
-/* 1. RSVP КАРТАСЫ (Контейнер) */
+/* Input-тың өзіне де стиль беріп жіберейік (жазған кездегі түсі) */
+input {
+    color: #a67c52 !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid rgba(166, 124, 82, 0.3) !important;
+}
 
-.rsvp-card {
-    /* Фон мен эффектілер */
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    /* Өлшемдер мен шегіністер */
+/* 3. "Жіберу" батырмасы (Самалетикпен) */
+.submit-btn {
+    background: #a67c52 !important;
+    color: white !important;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px; /* Сопақша стиль */
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Иконка мен мәтін арасы */
+    margin: 20px auto 0;
     width: 100%;
-    max-width: 380px;
-    padding: 30px 25px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin: 0 auto 20px auto;
-
-    /* Ішіндегі барлық мәтінге ортақ шрифт */
-    font-family: 'Kalissa', cursive !important;
-    text-align: center;
+    max-width: 200px;
 }
 
+.submit-btn i {
+    font-size: 20px; /* Самолеттің өлшемі */
+}
+
+.submit-btn:hover {
+    background: #8b6b4a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(166, 124, 82, 0.3);
+}
+/* Мекенжай бөлімінің стилі */
+.location-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(166, 124, 82, 0.2);
+    margin-bottom: 20px;
+}
+
+.location-details p {
+    font-family: 'Alice', serif !important;
+    font-size: 16px;
+    color: #4a3f35;
+    margin: 10px 0;
+}
+
+
+/* 2GIS логотипі бар сілтеменің стилі */
+.location-btn-container {
+    text-align: center; /* Ортаға қою */
+    margin-top: 25px;
+}
+/* 2GIS батырмасы - App Icon стилінде */
+.tgis-map-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Иконканың нақты өлшемі */
+    width: 60px;
+    height: 60px;
+
+    background: #ffffff;
+
+    /* Бұрыштарын жұмсақ (доғал) қылу */
+    border-radius: 12px;
+
+    padding: 8px; /* Логотип ішінде тығыз тұруы үшін */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin: 15px auto 0; /* Ортаға қою */
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Сәл ғана білінетін жиек */
+}
+
+/* Тышқанды апарғандағы (немесе басқандағы) әсер */
+.tgis-map-link:hover {
+    transform: scale(1.08); /* Сәл ғана үлкейеді */
+    box-shadow: 0 6px 15px rgba(166, 124, 82, 0.2);
+}
+
+/* Логотип суреті */
+.tgis-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 /* 2. RSVP ТАҚЫРЫП (Заголовок) */
 .rsvp-title {
     /* Шрифт пен Түс */
-    font-family: 'Kalissa', cursive !important;
+    font-family: 'Alice', serif !important;
     color: black; /* Сен сұраған түс сақталды */
 
     /* Өлшем мен оқылуы (Understandable) */
@@ -482,12 +617,12 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
     color: #444;
     margin-bottom: 10px;
 }#telegram-form input {
-    font-family: 'Dancing Script';
+     font-family: 'Alice', serif !important;
     font-size: 18px;
 }
 
 .submit-btn {
-    font-family: 'Dancing Script';
+    font-family: 'Alice', serif !important;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -519,8 +654,8 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
     box-sizing: border-box;
 
     /* Жазған кездегі мәтін түсі */
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    color:  #a67c52;
+    font-family: 'Alice', serif !important;
 }
 
 /* Ячейканың ішіндегі "Атыңыз" деген жазудың (placeholder) түсі */

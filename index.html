@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bauyrzhan & Almira | Wedding Invitation</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Bad+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
+   </head>
 <body>
 
 <div id="rose-container"></div>
@@ -43,7 +40,11 @@
         <img src="images/1.png" alt="Wedding" class="hero-img">
 
         <div class="hero-overlay-top">
-            <h1 class="names">Bauyrzhan & Almira</h1>
+            <h1 class="names">
+                Bauyrzhan<br>
+                &<br>
+                Almira
+            </h1>
             <p class="invite-text-on-img">Үйлену тойына шақырамыз!</p>
         </div>
 
@@ -65,13 +66,13 @@
     <div class="section calendar-section reveal">
         <section class="couple-names-section">
             <h2 class="couple-names">Құрметті!</h2>
-            <H3 class="invite-text-on-img">Ағайын-Туыс, Бауырлар,
+            <H3 class="invite-text">Ағайын-Туыс, Бауырлар,
                 Құда-Жекжат, Нағашы-Жиендер,
                 Дос-Жарандар, Әріптестер мен Көршілер!
 
                 Сіздерді</H3>
             <h2 class="couple-names">Бауыржан мен Альмира</h2>
-            <H3 class="invite-text-on-img">балаларымыздың шаңырақ көтеруіне арналған
+            <H3 class="invite-text">балаларымыздың шаңырақ көтеруіне арналған
                 ақ дастарханымыздың
                 қадірлі қонағы болуға
                 шақырамыз!</H3>
@@ -83,8 +84,6 @@
             <h1 class="wedding-title">Той салтанаты:</h1>
             <p class="wedding-details">
                 24 Шілде, 2026 жыл<br>
-                Сағат 18:00-де басталады<br>
-                "Aisultan Plaza" мейрамханасы
             </p>
             <div class="calendar-grid">
                 <div>Дүй</div><div>Сей</div><div>Сәр</div><div>Бей</div><div>Жұм</div><div>Сен</div><div>Жек</div>
@@ -119,12 +118,24 @@
             </div>
         </div>
 
-        <div class="section details-section reveal">
-            <h1 class="wedding-title">Мекенжайымыз:</h1>
-            <p><i class="fa-regular fa-clock"></i> Сағат: 18:00</p>
-            <p><i class="fa-solid fa-location-dot"></i> Бесағаш, Аэропортная 29г</p>
-            <a href="https://maps.google.com" target="_blank" class="map-btn">Картаны ашу</a>
+    <section class="section location-section reveal">
+        <div class="glass-card location-card">
+            <h2 class="section-title text-shadow-gold">Мекенжайымыз</h2>
+
+            <div class="location-details">
+                <p> "Aisultan Plaza"</p>
+                <p> Бесағаш, Аэропортная 29г</p>
+                <p> Сағат 18:00</p>
+            </div>
+
+            <div class="location-btn-container">
+                <a href="https://2gis.kz/almaty/geo/70000001041712972/77.049459,43.305557" target="_blank" class="tgis-map-link">
+                    <img src="images/2gis-logo.jpg" alt="2GIS Картасы" class="tgis-logo">
+                </a>
+            </div>
         </div>
+    </section>
+
     <div class="gallery-section">
         <div class="slider">
             <div class="slider-track">
@@ -141,14 +152,16 @@
         </div>
     </div>
     <div class="rsvp-card">
-    <h4 class="rsvp-title">Той кешіміздің қадірлі қонағы болып, қатысатыныңызды алдын ала растауыңызды өтінеміз</h4>
-    <form id="telegram-form">
-        <input type="text" id="guest-name" placeholder="Атыңыз" required>
-        <input type="number" id="guest-count" placeholder="Адам саны" required>
-        <button type="submit" class="submit-btn">Мен келемін!</button>
-    </form>
-
+        <h4 class="rsvp-title">Той кешіміздің қадірлі қонағы болып, қатысатыныңызды алдын ала растауыңызды өтінеміз</h4>
+        <form id="telegram-form">
+            <input type="text" id="guest-name" placeholder="Атыңыз" required>
+            <input type="number" id="guest-count" placeholder="Адам саны" required>
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Жіберу
+            </button>
+        </form>
     </div>
+
     <div class="section final-combined-section reveal">
         <div class="overlay-content">
 
