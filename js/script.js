@@ -106,12 +106,12 @@ function createPetal() {
 // Жапырақтарды тудыруды бастау (әр 0.3 секунд сайын)
 setInterval(createPetal, 300);
 
-// 1. СУРЕТТЕР ТІЗІМІ (Әрқайсысы бірегей болсын)
+// 1. СУРЕТТЕР ТІЗІМІ (Жаңартылған нұсқа)
 const myPhotos = [
     'images/k1.jpeg', 'images/k2.jpeg', 'images/k3.jpeg', 'images/k4.jpeg',
-    'images/k5.png', 'images/k6.png', 'images/k7.png', 'images/k8.png'
+    'images/k5.png', 'images/k6.png', 'images/k7.png', 'images/k8.png',
+    'images/k9.jpeg'
 ];
-
 const section = document.getElementById('collage-section');
 const photoObjects = [];
 let maxScrollReached = 0; // Ең жоғарғы жеткен скролл нүктесі
