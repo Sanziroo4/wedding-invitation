@@ -23,30 +23,16 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 3. Галерея (Свайп және Авто-слайд)
-const images = ["images/photo1.png", "images/photo2.png", "images/photo3.png", "images/photo4.png", ];
-let index = 0;
-const sImg = document.getElementById('slider-img');
-
-function moveSlide(step) {
-    index = (index + step + images.length) % images.length;
-    sImg.style.opacity = 0;
-    setTimeout(() => {
-        sImg.src = images[index];
-        sImg.style.opacity = 1;
-    }, 300);
-}
-setInterval(() => moveSlide(1), 4000); // Автоматты ауысу
-
 let startX = 0;
 const slider = document.getElementById('main-slider');
-slider.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-slider.addEventListener('touchend', e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) moveSlide(1);
-    if (endX - startX > 50) moveSlide(-1);
-});
-
+if (slider) {
+    slider.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    slider.addEventListener('touchend', e => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) moveSlide(1);
+        if (endX - startX > 50) moveSlide(-1);
+    });
+}
 // 4. Музыканы басқару
 function toggleMusic() {
     const audio = document.getElementById('wedding-audio');
@@ -60,30 +46,32 @@ function toggleMusic() {
     }
 }
 // Тойдың басталатын уақыты (2026 жыл, 24 шілде, 18:00)
-const weddingDate = new Date("July 24, 2026 18:00:00").getTime();
+window.onload = function() {
+    const weddingDate = new Date(2026, 6, 24, 18, 0, 0).getTime();
 
-const countdownFunction = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
+    const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
 
-    // Күн, сағат, минут, секундтарды есептеу
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.querySelector(".countdown-section").innerHTML = "<h3>Той басталды!</h3>";
+            return;
+        }
 
-    // Нәтижені экранға шығару
-    document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-    document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-    document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-    document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Егер уақыт өтіп кетсе
-    if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.querySelector(".countdown-section").innerHTML = "<h3>Той басталды!</h3>";
-    }
-}, 1000);
+        document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+    }, 1000);
+}
+
 function createPetal() {
     const container = document.getElementById('rose-container');
     if (!container) return; // Егер контейнер табылмаса, функция тоқтайды

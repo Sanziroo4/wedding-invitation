@@ -1,16 +1,16 @@
-/* Old Money Palette */
+
 :root {
     --gold: #d4af37;
     --cream: #fdfbf7;
     --burgundy: #8b0000;
     --text: #444;
 }
-
+/* --- 1. КОНВЕРТ БЕТІНІҢ ДЕКОРЫ --- */
 body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-serif; color: var(--text); overflow-x: hidden; }
 .container { max-width: 450px; margin: 0 auto; padding: 20px; }
 .section { margin-bottom: 60px; text-align: center; }
 
-/* --- 1. КОНВЕРТ БЕТІНІҢ ДЕКОРЫ --- */
+
 #envelope-wrapper {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: radial-gradient(circle, #fdfbf7 0%, #f4eee1 100%);
@@ -166,7 +166,7 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 }
 
 .names {
-    font-family: 'Great Vibes', cursive;
+    font-family: ''Kalissa'', cursive;
     font-size: 45px;
     color: #a67c52; /* Сенің шрифтің мен түсің */
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Мәтін жақсы оқылуы үшін */
@@ -174,15 +174,15 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 }
 
 .invite-text-on-img {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Marck Script', cursive;
     font-size: 14px;
-    color: #444;
+    color: #a67c52;
     letter-spacing: 1px;
     margin-top: 5px;
 }
 /* "Үйлену тойына шақырамыз!" жазуының стилі */
 .invite-text, .invite-text-on-img {
-    font-family: 'Great Vibes', cursive !important; /* Есімдердегідей шрифт */
+    font-family: 'Marck Script', cursive !important; /* Есімдердегідей шрифт */
     font-size: 28px !important; /* Өлшемін сәл кішірек қылдық */
     color: #a67c52 !important; /* Есімдердегідей алтын-қоңыр түс */
     text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8) !important;
@@ -192,8 +192,8 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 
 /* Егер есімдердің де түсін нақтылағың келсе */
 .names {
-    font-family: 'Great Vibes', cursive;
-    color: #a67c52;
+    font-family: 'Marck Script', cursive
+    color:#a67c52;
     font-size: 45px;
     margin-bottom: 5px;
 }
@@ -212,7 +212,7 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: #a67c52;
+    color: white;
     font-size: 20px;
     animation: bounce 2s infinite;
 }
@@ -262,7 +262,23 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
     background: rgba(253, 251, 247, 0.95);
     backdrop-filter: blur(8px);
 }
+/* Барлық тақырыптарға (h1-ден h3-ке дейін) бірдей стиль беру */
+h1, h2, h3, .section-title {
+    /* 1. Шрифт: "Той салтанаты" сияқты әдемі курсив */
+    font-family: 'Great Vibes', cursive;
 
+    /* 2. Түс: Суреттегідей қанық қара/қою түс */
+    color: #000000;
+
+    /* 3. Баптаулар */
+    font-weight: normal; /* Курсив шрифттерге тым жуан болған жараспайды */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Егер кейбір тақырыптар тым кішкентай көрінсе, мөлшерін былай ретте: */
+h1 { font-size: 55px; } /* Ең басты тақырып */
+h2 { font-size: 40px; } /* Бөлімдердің тақырыбы (Күнтізбе, Карта т.б.) */
 /* --- 2. НЕГІЗГІ ДИЗАЙН --- */
 .names { font-family: 'Great Vibes', cursive; font-size: 50px; color: #a67c52; }
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
@@ -285,7 +301,30 @@ body { margin: 0; background: var(--cream); font-family: 'Montserrat', sans-seri
 .map-btn, .submit-btn { background: #a67c52; color: white; text-decoration: none; padding: 15px 30px; border-radius: 10px; display: inline-block; width: 80%; border: none; cursor: pointer; }
 input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
 
+/* "Той салтанаты" тақырыбы үшін */
+.wedding-title {
+    font-family: 'Great Vibes', cursive; /* Немесе 'Playfair Display' */
+    color: #a67c52; /* Алтын түс */
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Сәл көлеңке әдемілік үшін */
+}
+
+/* Астындағы мәліметтер (күн, уақыт, мекен-жай) үшін */
+.wedding-details {
+    font-family: 'Montserrat', sans-serif;
+    color: #4A4A4A; /* Көз шаршатпайтын қою сұр */
+    font-size: 18px;
+    line-height: 1.6; /* Жолдардың арасы ашық болуы үшін */
+    text-align: center;
+    font-weight: 300; /* Жіңішке стиль */
+}
 /* 1. БАРЛЫҚ БӨЛІМДЕРГЕ (CALENDAR, COUNTDOWN, DETAILS) ОРТАҚ ӘЙНЕК СТИЛІ */
+/* Күнтізбе тұрған контейнерге отступ қосу */
+.calendar-section {
+    margin-top: 50px; /* Осы санды өзіңе ыңғайлы етіп өзгерт (30px, 80px т.б.) */
+}
 .calendar-section,
 .countdown-section,
 .rsvp-card,
@@ -399,27 +438,59 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
 
 
 /* 1. RSVP КАРТАСЫН МӨЛДІР (ӘЙНЕК СИЯҚТЫ) ЕТУ */
+/* 1. RSVP КАРТАСЫ (Контейнер) */
+
 .rsvp-card {
-    /* Ақ түс, бірақ 0.2 (20%) ғана мөлдірлік */
+    /* Фон мен эффектілер */
     background: rgba(255, 255, 255, 0.2);
-    /* Артындағы суретті сәл бұлдырату (нағыз әйнек эффектісі) */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
+    /* Өлшемдер мен шегіністер */
     width: 100%;
     max-width: 380px;
     padding: 30px 25px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Жіңішке мөлдір жиек */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px auto;
+
+    /* Ішіндегі барлық мәтінге ортақ шрифт */
+    font-family: 'Kalissa', cursive !important;
+    text-align: center;
 }
+
+/* 2. RSVP ТАҚЫРЫП (Заголовок) */
 .rsvp-title {
+    /* Шрифт пен Түс */
+    font-family: 'Kalissa', cursive !important;
+    color: black; /* Сен сұраған түс сақталды */
+
+    /* Өлшем мен оқылуы (Understandable) */
+    font-size: 32px; /* Оқуға ыңғайлы болу үшін сәл үлкейттік */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+
+    text-transform: none; /* Каллиграфиялық шрифт бас әріптермен жаман көрінеді */
+    margin-bottom: 25px;
+}
+
+/* 3. ФОРМА ІШІНДЕГІ ЖАЗУЛАР (Егер түсініксіз болса) */
+.rsvp-card p, .rsvp-card label {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 10px;
+}#telegram-form input {
+    font-family: 'Dancing Script';
     font-size: 18px;
-    letter-spacing: 2px;
-    color: white;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+}
+
+.submit-btn {
+    font-family: 'Dancing Script';
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* 3. БАТЫРМА (Бұл анық көрінуі керек) */
@@ -463,55 +534,43 @@ input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; bord
     background: rgba(255, 255, 255, 0.1);
     border-color: #d4af37; /* Алтын түс */
 }
-/* 1. ГАЛЕРЕЯ КОНТЕЙНЕРІН ӘЙНЕК СТИЛІНЕ КЕЛТІРУ */
-.gallery-section {
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 25px !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-    padding: 20px !important;
-    margin-bottom: 30px !important;
-    position: relative;
-    overflow: hidden; /* Шеттерден шыққан суреттерді кесу үшін */
-}
-
-/* 2. СУРЕТТЕРДІҢ ЕКІ ШЕТІН ЖҰМСАҚ МӨЛДІР (GRADIENT MASK) ЕТУ */
+/* Галерея контейнері */
 .slider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Екі шетіне градиентті маска қою */
-    mask-image: linear-gradient(to right,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(to right,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-    );
-}
-
-/* 3. СЛАЙДЕР ІШІНДЕГІ СУРЕТТЕРДІҢ СТИЛІ */
-.slider img {
     width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    border-radius: 15px;
-    background: transparent !important; /* Суреттің арты мөлдір */
+    overflow: hidden; /* Сыртына шыққан суреттерді жасырады */
+    position: relative;
+    padding: 10px 0;
 }
 
-/* 4. СВАЙП ЖАСАҢЫЗ ДЕГЕН МӘТІНДІ АҚ ҚЫЛУ */
-.swipe-hint {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 13px;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+/* Суреттер тізбегі */
+.slider-track {
+    display: flex;
+    width: calc(250px * 8); /* (Сурет ені + арақашықтық) * сурет саны */
+    animation: scroll 25s linear infinite; /* 25 секундта бір айналым жасайды */
+}
+
+/* Әр суреттің стилі */
+.slider-track img {
+    width: 250px; /* Суреттердің өлшемі бірдей болғаны дұрыс */
+    height: 350px;
+    object-fit: cover;
+    margin: 0 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Қозғалыс анимациясы */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Бірінші топ толық біткенде бастапқы орнына оралады */
+        transform: translateX(calc(-250px * 4 - 80px));
+    }
+}
+
+/* Тышқанды үстіне апарғанда жылдамдық бәсеңдейді (немесе тоқтайды) */
+.slider:hover .slider-track {
+    animation-play-state: paused;
 }
