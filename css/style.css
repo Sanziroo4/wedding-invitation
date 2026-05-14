@@ -709,3 +709,29 @@ input {
 .slider:hover .slider-track {
     animation-play-state: paused;
 }
+/* Мекенжай тақырыбы мен мәтіндерін ортаға келтіру */
+.location-card h2 {
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block !important;
+    /* Экранға қарай өлшемі өзгереді (32px-тен 45px-ке дейін) */
+    font-size: clamp(32px, 8vw, 45px) !important;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.location-details {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Элементтерді ортаға жинайды */
+}
+
+.location-details p {
+    text-align: center !important;
+    margin: 5px 0 !important;
+    width: 100%;
+}
